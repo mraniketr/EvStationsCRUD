@@ -35,6 +35,7 @@ public class EvController {
 			List<evStation> res = null;
 			Sort sortob = null;
 			if (sort != null && param != null) {
+				System.out.println(param);
 				sortob = Sort.by(sort.equalsIgnoreCase("asc") ? Sort.Direction.ASC : Sort.Direction.DESC, param);
 
 			}

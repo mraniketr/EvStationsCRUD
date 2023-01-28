@@ -16,9 +16,9 @@ import jakarta.persistence.Table;
 public class evStation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long station_id;
+	private Long stationid;
 	@Column(name = "station_name")
-	private String station_name;
+	private String stationname;
 	@Column(name = "station_image")
 	@Lob
 	private String station_image;
@@ -30,10 +30,10 @@ public class evStation {
 	private String image_type;
 
 	@Column(name = "station_pricing")
-	private Float station_pricing;
+	private Float stationpricing;
 	@Column(name = "station_address")
 
-	private String station_address;
+	private String stationaddress;
 
 	public evStation() {
 
@@ -42,17 +42,17 @@ public class evStation {
 	public evStation(Long station_id, String station_name, String station_image, Float station_pricing,
 			String station_address) {
 		super();
-		this.station_id = station_id;
-		this.station_name = station_name;
+		this.stationid = station_id;
+		this.stationname = station_name;
 		this.station_image = station_image;
-		this.station_pricing = station_pricing;
-		this.station_address = station_address;
+		this.stationpricing = station_pricing;
+		this.stationaddress = station_address;
 	}
 
 
 	public evStation(evStationRequest req) {
 		super();
-		this.station_name = req.getStation_name();
+		this.stationname = req.getStation_name();
 		try {
 			this.station_image = new String(req.getImage()[0].getBytes(), StandardCharsets.UTF_8);
 		} catch (IOException e) {
@@ -60,8 +60,8 @@ public class evStation {
 			e.printStackTrace();
 			this.station_image = null;
 		}
-		this.station_pricing = req.getStation_pricing();
-		this.station_address = req.getStation_address();
+		this.stationpricing = req.getStation_pricing();
+		this.stationaddress = req.getStation_address();
 		this.image_name = req.getImage()[0].getName();
 		this.image_size = req.getImage()[0].getSize();
 		this.image_type = req.getImage()[0].getContentType();
@@ -93,19 +93,19 @@ public class evStation {
 	}
 
 	public Long getStation_id() {
-		return station_id;
+		return stationid;
 	}
 
 	public void setStation_id(Long station_id) {
-		this.station_id = station_id;
+		this.stationid = station_id;
 	}
 
 	public String getStation_name() {
-		return station_name;
+		return stationname;
 	}
 
 	public void setStation_name(String station_name) {
-		this.station_name = station_name;
+		this.stationname = station_name;
 	}
 
 	public String getStation_image() {
@@ -117,19 +117,19 @@ public class evStation {
 	}
 
 	public Float getStation_pricing() {
-		return station_pricing;
+		return stationpricing;
 	}
 
 	public void setStation_pricing(Float station_pricing) {
-		this.station_pricing = station_pricing;
+		this.stationpricing = station_pricing;
 	}
 
 	public String getStation_address() {
-		return station_address;
+		return stationaddress;
 	}
 
 	public void setStation_address(String station_address) {
-		this.station_address = station_address;
+		this.stationaddress = station_address;
 	}
 
 

@@ -43,7 +43,6 @@ public class evStation {
 
 	public evStation(evStationRequest req) {
 		super();
-		this.station_id = req.getStation_id();
 		this.station_name = req.getStation_name();
 		try {
 			this.station_image = new String(req.getImage()[0].getBytes(), StandardCharsets.UTF_8);

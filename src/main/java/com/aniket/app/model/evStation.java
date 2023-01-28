@@ -22,9 +22,17 @@ public class evStation {
 	@Column(name = "station_image")
 	@Lob
 	private String station_image;
+	@Column(name = "image_name")
+	private String image_name;
+	@Column(name = "image_size")
+	private Long image_size;
+	@Column(name = "image_type")
+	private String image_type;
+
 	@Column(name = "station_pricing")
 	private Float station_pricing;
 	@Column(name = "station_address")
+
 	private String station_address;
 
 	public evStation() {
@@ -41,6 +49,7 @@ public class evStation {
 		this.station_address = station_address;
 	}
 
+
 	public evStation(evStationRequest req) {
 		super();
 		this.station_name = req.getStation_name();
@@ -53,6 +62,34 @@ public class evStation {
 		}
 		this.station_pricing = req.getStation_pricing();
 		this.station_address = req.getStation_address();
+		this.image_name = req.getImage()[0].getName();
+		this.image_size = req.getImage()[0].getSize();
+		this.image_type = req.getImage()[0].getContentType();
+
+	}
+
+	public String getImage_name() {
+		return image_name;
+	}
+
+	public void setImage_name(String image_name) {
+		this.image_name = image_name;
+	}
+
+	public Long getImage_size() {
+		return image_size;
+	}
+
+	public void setImage_size(Long image_size) {
+		this.image_size = image_size;
+	}
+
+	public String getImage_type() {
+		return image_type;
+	}
+
+	public void setImage_type(String image_type) {
+		this.image_type = image_type;
 	}
 
 	public Long getStation_id() {
